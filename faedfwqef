@@ -1,0 +1,628 @@
+[33mcommit 52c4b85724c878ecc41b8370742eee1738b0c151[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: JohnErikcObando <Jeobando11@hotmail.com>
+Date:   Wed Jul 13 19:36:20 2022 -0500
+
+    Orientado a objetos
+
+[1mdiff --git a/.vscode/launch.json b/.vscode/launch.json[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ec0b1fe[m
+[1m--- /dev/null[m
+[1m+++ b/.vscode/launch.json[m
+[36m@@ -0,0 +1,10 @@[m
+[32m+[m[32m{[m
+[32m+[m[32m    "configurations": [[m
+[32m+[m[32m        {[m
+[32m+[m[32m            "type": "java",[m
+[32m+[m[32m            "name": "CodeLens (Launch) - Main",[m
+[32m+[m[32m            "request": "launch",[m
+[32m+[m[32m            "mainClass": "Main"[m
+[32m+[m[32m        }[m
+[32m+[m[32m    ][m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/JS/Account.js b/JS/Account.js[m
+[1mnew file mode 100644[m
+[1mindex 0000000..010f606[m
+[1m--- /dev/null[m
+[1m+++ b/JS/Account.js[m
+[36m@@ -0,0 +1,12 @@[m
+[32m+[m[32mclass Account {[m
+[32m+[m
+[32m+[m[32m    constructor(name, document) {[m
+[32m+[m[32m        this.id;[m
+[32m+[m[32m        this.name = name;[m
+[32m+[m[32m        this.document = document;[m
+[32m+[m[32m        this.email;[m
+[32m+[m[32m        this.password;[m
+[32m+[m[32m    }[m
+[32m+[m[41m    [m
+[32m+[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/JS/Car.js b/JS/Car.js[m
+[1mnew file mode 100644[m
+[1mindex 0000000..6647b4a[m
+[1m--- /dev/null[m
+[1m+++ b/JS/Car.js[m
+[36m@@ -0,0 +1,16 @@[m
+[32m+[m[32mclass Car {[m
+[32m+[m
+[32m+[m[32m    constructor(license, driver) {[m
+[32m+[m[32m        this.id;[m
+[32m+[m[32m        this.license = license;[m
+[32m+[m[32m        this.driver = driver;[m
+[32m+[m[32m        this.passenger;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    printDataCar() {[m
+[32m+[m[32m        console.log(this.driver)[m
+[32m+[m[32m        console.log(this.driver.name)[m
+[32m+[m[32m        console.log(this.driver.document)[m
+[32m+[m[32m    }[m
+[32m+[m[41m    [m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/JS/Payment.js b/JS/Payment.js[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e77feaa[m
+[1m--- /dev/null[m
+[1m+++ b/JS/Payment.js[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32mclass Payment {[m
+[32m+[m[32m    constructor() {[m
+[32m+[m[32m        this.id;[m
+[32m+[m[32m    }[m
+[32m+[m[41m    [m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/JS/Route.js b/JS/Route.js[m
+[1mnew file mode 100644[m
+[1mindex 0000000..00afb00[m
+[1m--- /dev/null[m
+[1m+++ b/JS/Route.js[m
+[36m@@ -0,0 +1,7 @@[m
+[32m+[m[32mclass Route {[m
+[32m+[m[32m    constructor(){[m
+[32m+[m[32m        this.id;[m
+[32m+[m[32m        this.init;[m
+[32m+[m[32m        this.end;[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/JS/index.html b/JS/index.html[m
+[1mnew file mode 100644[m
+[1mindex 0000000..1345b69[m
+[1m--- /dev/null[m
+[1m+++ b/JS/index.html[m
+[36m@@ -0,0 +1,16 @@[m
+[32m+[m[32m<!DOCTYPE html>[m
+[32m+[m[32m<html lang="en">[m
+[32m+[m[32m<head>[m
+[32m+[m[32m    <meta charset="UTF-8">[m
+[32m+[m[32m    <meta name="viewport" content="width=device-width, initial-scale=1.0">[m
+[32m+[m[32m    <meta http-equiv="X-UA-Compatible" content="ie=edge">[m
+[32m+[m[32m    <title>Document</title>[m
+[32m+[m[32m</head>[m
+[32m+[m[32m<body>[m
+[32m+[m[32m    <h1>Programación Orientada a Objetos en JavaScript</h1>[m
+[32m+[m[41m    [m
+[32m+[m[32m</body>[m
+[32m+[m[32m<script src="Account.js"></script>[m
+[32m+[m[32m<script src="Car.js"></script>[m
+[32m+[m[32m<script src="index.js"></script>[m
+[32m+[m[32m</html>[m
+\ No newline at end of file[m
+[1mdiff --git a/JS/index.js b/JS/index.js[m
+[1mnew file mode 100644[m
+[1mindex 0000000..38bf1db[m
+[1m--- /dev/null[m
+[1m+++ b/JS/index.js[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32mvar car = new Car("AW456", new Account("Andres Herrera", "QWE234"))[m
+[32m+[m[32mcar.passenger = 4;[m
+[32m+[m[32mcar.printDataCar();[m
+[32m+[m
+[32m+[m
+[32m+[m
+[1mdiff --git a/Java/Account.java b/Java/Account.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..00b7f36[m
+[1m--- /dev/null[m
+[1m+++ b/Java/Account.java[m
+[36m@@ -0,0 +1,12 @@[m
+[32m+[m[32mclass Account {[m
+[32m+[m[32m    Integer id;[m
+[32m+[m[32m    String name;[m
+[32m+[m[32m    String document;[m
+[32m+[m[32m    String email;[m
+[32m+[m[32m    String password;[m
+[32m+[m
+[32m+[m[32m    public Account(String name, String document){[m
+[32m+[m[32m        this.name = name;[m
+[32m+[m[32m        this.document = document;[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/Java/Car.java b/Java/Car.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..aa14a62[m
+[1m--- /dev/null[m
+[1m+++ b/Java/Car.java[m
+[36m@@ -0,0 +1,76 @@[m
+[32m+[m[32mclass Car {[m
+[32m+[m[32m    private Integer id;[m
+[32m+[m[32m    private String license;[m
+[32m+[m[32m    private Account driver;[m
+[32m+[m[32m    private Integer passegenger;[m
+[32m+[m
+[32m+[m[32m    public Car(String license, Account driver){[m
+[32m+[m[32m        this.license = license;[m
+[32m+[m[32m        this.driver = driver;[m
+[32m+[m[41m        [m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    void printDataCar() {[m
+[32m+[m[32m        if(passegenger != null){[m
+[32m+[m[32m            System.out.println("License: " + license + " Name Driver: " + driver.name + " Passengers: " + passegenger);[m
+[32m+[m[32m        }[m
+[32m+[m[41m        [m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m    public Integer getPassenger(){[m
+[32m+[m[32m        return passegenger;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public void setPassenger(Integer passenger) {[m
+[32m+[m[32m        if(passenger == 4){[m
+[32m+[m[32m            this.passegenger = passenger;[m
+[32m+[m[32m        }else{[m
+[32m+[m[32m            System.out.println("Necesitas asignar 4 pasajeros");[m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    /**[m
+[32m+[m[32m     * @return the id[m
+[32m+[m[32m     */[m
+[32m+[m[32m    public Integer getId() {[m
+[32m+[m[32m        return id;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    /**[m
+[32m+[m[32m     * @param id the id to set[m
+[32m+[m[32m     */[m
+[32m+[m[32m    public void setId(Integer id) {[m
+[32m+[m[32m        this.id = id;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    /**[m
+[32m+[m[32m     * @return the license[m
+[32m+[m[32m     */[m
+[32m+[m[32m    public String getLicense() {[m
+[32m+[m[32m        return license;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    /**[m
+[32m+[m[32m     * @param license the license to set[m
+[32m+[m[32m     */[m
+[32m+[m[32m    public void setLicense(String license) {[m
+[32m+[m[32m        this.license = license;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    /**[m
+[32m+[m[32m     * @return the driver[m
+[32m+[m[32m     */[m
+[32m+[m[32m    public Account getDriver() {[m
+[32m+[m[32m        return driver;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    /**[m
+[32m+[m[32m     * @param driver the driver to set[m
+[32m+[m[32m     */[m
+[32m+[m[32m    public void setDriver(Account driver) {[m
+[32m+[m[32m        this.driver = driver;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[41m    [m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/Java/Main.java b/Java/Main.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f00636c[m
+[1m--- /dev/null[m
+[1m+++ b/Java/Main.java[m
+[36m@@ -0,0 +1,16 @@[m
+[32m+[m[32mclass Main {[m
+[32m+[m[32m    public static void main(String[] args) {[m
+[32m+[m[32m        System.out.println("Hola Mundo");[m
+[32m+[m[32m        UberX uberX = new UberX("AMQ123", new Account("Andres Herrera", "AND123"), "Chevrolet", "Sonic");[m
+[32m+[m[32m        uberX.setPassenger(4);[m
+[32m+[m[32m        uberX.printDataCar();[m
+[32m+[m
+[32m+[m[32m        UberVan uberVan = new UberVan("FGH345", new Account("Andres Herrera", "AND123"));[m
+[32m+[m[32m        uberVan.setPassenger(6);[m
+[32m+[m[32m        uberVan.printDataCar();[m
+[32m+[m
+[32m+[m[32m        /*Car car2 = new Car("QWE567", new Account("Andrea Herrera", "ANDA876"));[m
+[32m+[m[32m        car2.passegenger = 3;[m
+[32m+[m[32m        car2.printDataCar();*/[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/Java/Payment.java b/Java/Payment.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..8620a91[m
+[1m--- /dev/null[m
+[1m+++ b/Java/Payment.java[m
+[36m@@ -0,0 +1,3 @@[m
+[32m+[m[32mclass Payment {[m
+[32m+[m[32m    Integer id;[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/Java/Route.java b/Java/Route.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f6ce2ba[m
+[1m--- /dev/null[m
+[1m+++ b/Java/Route.java[m
+[36m@@ -0,0 +1,7 @@[m
+[32m+[m[32mimport java.util.ArrayList;[m
+[32m+[m
+[32m+[m[32mclass Route {[m
+[32m+[m[32m    Integer id;[m
+[32m+[m[32m    ArrayList<Double> start;[m
+[32m+[m[32m    ArrayList<Double> end;[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/Java/UberBlack.java b/Java/UberBlack.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..a9eb03c[m
+[1m--- /dev/null[m
+[1m+++ b/Java/UberBlack.java[m
+[36m@@ -0,0 +1,15 @@[m
+[32m+[m[32mimport java.util.ArrayList;[m
+[32m+[m[32mimport java.util.Map;[m
+[32m+[m
+[32m+[m[32mclass UberBlack extends Car {[m
+[32m+[m[32m    Map<String, ArrayList<String,Integer>> typeCarAccepted;[m
+[32m+[m[32m    ArrayList<String> seatsMaterial;[m
+[32m+[m
+[32m+[m[32m    public UberBlack(String license, Account driver,[m[41m [m
+[32m+[m[32m    Map<String, ArrayList<String,Integer>> typeCarAccepted,[m
+[32m+[m[32m    ArrayList<String> seatsMaterial){[m
+[32m+[m[32m        super(license, driver);[m
+[32m+[m[32m        this.typeCarAccepted = typeCarAccepted;[m
+[32m+[m[32m        this.seatsMaterial = seatsMaterial;[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/Java/UberPool.java b/Java/UberPool.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..7cb6036[m
+[1m--- /dev/null[m
+[1m+++ b/Java/UberPool.java[m
+[36m@@ -0,0 +1,11 @@[m
+[32m+[m[32mclass UberPool extends Car {[m
+[32m+[m[32m    String brand;[m
+[32m+[m[32m    String model;[m
+[32m+[m
+[32m+[m[32m    public UberPool(String license, Account driver, String brand, String model){[m
+[32m+[m[32m        super(license, driver);[m
+[32m+[m[32m        this.brand = brand;[m
+[32m+[m[32m        this.model = model;[m
+[32m+[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/Java/UberVan.java b/Java/UberVan.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..06b2008[m
+[1m--- /dev/null[m
+[1m+++ b/Java/UberVan.java[m
+[36m@@ -0,0 +1,31 @@[m
+[32m+[m[32mimport java.util.ArrayList;[m
+[32m+[m[32mimport java.util.Map;[m
+[32m+[m
+[32m+[m[32mclass UberVan extends Car {[m
+[32m+[m[32m    Map<String, Map<String,Integer>> typeCarAccepted;[m
+[32m+[m[32m    ArrayList<String> seatsMaterial;[m
+[32m+[m[32m    private Integer passenger;[m
+[32m+[m[41m    [m
+[32m+[m[32m    public UberVan(String license, Account driver){[m
+[32m+[m[32m        super(license, driver);[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public UberVan(String license, Account driver,[m[41m [m
+[32m+[m[32m    Map<String, Map<String,Integer>> typeCarAccepted,[m
+[32m+[m[32m    ArrayList<String> seatsMaterial){[m
+[32m+[m[32m        super(license, driver);[m
+[32m+[m[32m        this.typeCarAccepted = typeCarAccepted;[m
+[32m+[m[32m        this.seatsMaterial = seatsMaterial;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    public void setPassenger(Integer passenger) {[m
+[32m+[m[32m        if(passenger == 6){[m
+[32m+[m[32m            this.passenger = passenger;[m
+[32m+[m[32m        }else{[m
+[32m+[m[32m            System.out.println("Necesitas asignar 4 pasajeros");[m
+[32m+[m[32m        }[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[41m    [m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/Java/UberX.java b/Java/UberX.java[m
+[1mnew file mode 100644[m
+[1mindex 0000000..dbe36f2[m
+[1m--- /dev/null[m
+[1m+++ b/Java/UberX.java[m
+[36m@@ -0,0 +1,17 @@[m
+[32m+[m[32mclass UberX extends Car {[m
+[32m+[m[32m    String brand;[m
+[32m+[m[32m    String model;[m
+[32m+[m
+[32m+[m[32m    public UberX(String license, Account driver, String brand, String model){[m
+[32m+[m[32m        super(license, driver);[m
+[32m+[m[32m        this.brand = brand;[m
+[32m+[m[32m        this.model = model;[m
+[32m+[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    @Override[m
+[32m+[m[32m    void printDataCar() {[m
+[32m+[m[32m        super.printDataCar();[m
+[32m+[m[32m        System.out.println("Modelo: " + model + " Brand: " + brand);[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+\ No newline at end of file[m
+[1mdiff --git a/PHP/Route.php b/PHP/Route.php[m
+[1mnew file mode 100644[m
+[1mindex 0000000..9331ea6[m
+[1m--- /dev/null[m
+[1m+++ b/PHP/Route.php[m
+[36m@@ -0,0 +1,7 @@[m
+[32m+[m[32m<?php[m
+[32m+[m[32mclass Route {[m
+[32m+[m[32m    public $id;[m
+[32m+[m[32m    public $init = array();[m
+[32m+[m[32m    public $end = array();[m
+[32m+[m[32m}[m
+[32m+[m[32m?>[m
+\ No newline at end of file[m
+[1mdiff --git a/PHP/account.php b/PHP/account.php[m
+[1mnew file mode 100644[m
+[1mindex 0000000..ff85122[m
+[1m--- /dev/null[m
+[1m+++ b/PHP/account.php[m
+[36m@@ -0,0 +1,16 @@[m
+[32m+[m[32m<?php[m
+[32m+[m[32mclass Account {[m
+[32m+[m[32m    public $id;[m
+[32m+[m[32m    public $name;[m
+[32m+[m[32m    public $document;[m
+[32m+[m[32m    public $email;[m
+[32m+[m[32m    public $password;[m
+[32m+[m
+[32m+[m[32m    public function __construct($name, $document){[m
+[32m+[m[32m        $this->name = $name;[m
+[32m+[m[32m        $this->document = $document;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m?>[m
+\ No newline at end of file[m
+[1mdiff --git a/PHP/car.php b/PHP/car.php[m
+[1mnew file mode 100644[m
+[1mindex 0000000..5b05ca4[m
+[1m--- /dev/null[m
+[1m+++ b/PHP/car.php[m
+[36m@@ -0,0 +1,18 @@[m
+[32m+[m[32m<?php[m
+[32m+[m[32mrequire_once('account.php');[m
+[32m+[m[32mclass Car {[m
+[32m+[m[32m    public $id;[m
+[32m+[m[32m    public $license;[m
+[32m+[m[32m    public $driver;[m
+[32m+[m[32m    public $passenger;[m
+[32m+[m
+[32m+[m[32m    public function __construct($license, $driver){[m
+[32m+[m[32m        $this->license = $license;[m
+[32m+[m[32m        $this->driver = $driver;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m[32m    public function printDataCar() {[m
+[32m+[m[32m        echo "Licencia: $this->license Driver: ".$this->driver->name;[m
+[32m+[m[32m    }[m
+[32m+[m[32m}[m
+[32m+[m[32m?>[m
+\ No newline at end of file[m
+[1mdiff --git a/PHP/index.php b/PHP/index.php[m
+[1mnew file mode 100644[m
+[1mindex 0000000..848ac22[m
+[1m--- /dev/null[m
+[1m+++ b/PHP/index.php[m
+[36m@@ -0,0 +1,12 @@[m
+[32m+[m[32m<?php[m
+[32m+[m[32mrequire_once("car.php");[m
+[32m+[m[32mrequire_once("uberX.php");[m
+[32m+[m[32mrequire_once("uberPool.php");[m
+[32m+[m[32mrequire_once("account.php");[m
+[32m+[m
+[32m+[m[32m$uberX = new UberX("CVB123", new Account("Andres Herrera", "AND456"), "Chevrolet", "Spark");[m
+[32m+[m[32m$uberX->printDataCar();[m
+[32m+[m
+[32m+[m[32m$uberPool = new UberPool("TYU567", new Account("Andrea Ferran", "ANDA765"), "Dodge", "Attitude");[m
+[32m+[m[32m$uberPool->printDataCar();[m
+[32m+[m[32m?>[m
+\ No newline at end of file[m
+[1mdiff --git a/PHP/payment.php b/PHP/payment.php[m
+[1mnew file mode 100644[m
+[1mindex 0000000..f95c302[m
+[1m--- /dev/null[m
+[1m+++ b/PHP/payment.php[m
+[36m@@ -0,0 +1,5 @@[m
+[32m+[m[32m<?php[m
+[32m+[m[32mclass Payment {[m
+[32m+[m[32m    public $id;[m
+[32m+[m[32m}[m
+[32m+[m[32m?>[m
+\ No newline at end of file[m
+[1mdiff --git a/PHP/uberBlack.php b/PHP/uberBlack.php[m
+[1mnew file mode 100644[m
+[1mindex 0000000..617b0c4[m
+[1m--- /dev/null[m
+[1m+++ b/PHP/uberBlack.php[m
+[36m@@ -0,0 +1,15 @@[m
+[32m+[m[32m<?php[m
+[32m+[m[32mrequire_once('car.php');[m
+[32m+[m[32mclass UberBlack extends Car {[m
+[32m+[m[32m    public $typeCarAccepted;[m
+[32m+[m[32m    public $seatsMaterial;[m
+[32m+[m
+[32m+[m[32m    public function __construct($license, $driver, $typeCarAccepted, $seatsMaterial){[m
+[32m+[m[32m        parent::__construct($license,$driver);[m
+[32m+[m[32m        $this->typeCarAccepted = $typeCarAccepted;[m
+[32m+[m[32m        $this->seatsMaterial = $seatsMaterial;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m}[m
+[32m+[m[32m?>[m
+\ No newline at end of file[m
+[1mdiff --git a/PHP/uberPool.php b/PHP/uberPool.php[m
+[1mnew file mode 100644[m
+[1mindex 0000000..94e198f[m
+[1m--- /dev/null[m
+[1m+++ b/PHP/uberPool.php[m
+[36m@@ -0,0 +1,15 @@[m
+[32m+[m[32m<?php[m
+[32m+[m[32mrequire_once('car.php');[m
+[32m+[m[32mclass UberPool extends Car {[m
+[32m+[m[32m    public $brand;[m
+[32m+[m[32m    public $model;[m
+[32m+[m
+[32m+[m[32m    public function __construct($license, $driver, $brand, $model){[m
+[32m+[m[32m        parent::__construct($license,$driver);[m
+[32m+[m[32m        $this->brand = $brand;[m
+[32m+[m[32m        $this->model = $model;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m}[m
+[32m+[m[32m?>[m
+\ No newline at end of file[m
+[1mdiff --git a/PHP/uberVan.php b/PHP/uberVan.php[m
+[1mnew file mode 100644[m
+[1mindex 0000000..617b0c4[m
+[1m--- /dev/null[m
+[1m+++ b/PHP/uberVan.php[m
+[36m@@ -0,0 +1,15 @@[m
+[32m+[m[32m<?php[m
+[32m+[m[32mrequire_once('car.php');[m
+[32m+[m[32mclass UberBlack extends Car {[m
+[32m+[m[32m    public $typeCarAccepted;[m
+[32m+[m[32m    public $seatsMaterial;[m
+[32m+[m
+[32m+[m[32m    public function __construct($license, $driver, $typeCarAccepted, $seatsMaterial){[m
+[32m+[m[32m        parent::__construct($license,$driver);[m
+[32m+[m[32m        $this->typeCarAccepted = $typeCarAccepted;[m
+[32m+[m[32m        $this->seatsMaterial = $seatsMaterial;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m}[m
+[32m+[m[32m?>[m
+\ No newline at end of file[m
+[1mdiff --git a/PHP/uberX.php b/PHP/uberX.php[m
+[1mnew file mode 100644[m
+[1mindex 0000000..03a6c92[m
+[1m--- /dev/null[m
+[1m+++ b/PHP/uberX.php[m
+[36m@@ -0,0 +1,15 @@[m
+[32m+[m[32m<?php[m
+[32m+[m[32mrequire_once('car.php');[m
+[32m+[m[32mclass UberX extends Car {[m
+[32m+[m[32m    public $brand;[m
+[32m+[m[32m    public $model;[m
+[32m+[m
+[32m+[m[32m    public function __construct($license, $driver, $brand, $model){[m
+[32m+[m[32m        parent::__construct($license,$driver);[m
+[32m+[m[32m        $this->brand = $brand;[m
+[32m+[m[32m        $this->model = $model;[m
+[32m+[m[32m    }[m
+[32m+[m
+[32m+[m
+[32m+[m[32m}[m
+[32m+[m[32m?>[m
+\ No newline at end of file[m
+[1mdiff --git a/Python/account.py b/Python/account.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..4de23b7[m
+[1m--- /dev/null[m
+[1m+++ b/Python/account.py[m
+[36m@@ -0,0 +1,6 @@[m
+[32m+[m[32mclass Account:[m
+[32m+[m[32m    id          = int[m
+[32m+[m[32m    name        = str[m
+[32m+[m[32m    document    = str[m
+[32m+[m[32m    email       = str[m
+[32m+[m[32m    password    = str[m
+\ No newline at end of file[m
+[1mdiff --git a/Python/car.py b/Python/car.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..721bd1b[m
+[1m--- /dev/null[m
+[1m+++ b/Python/car.py[m
+[36m@@ -0,0 +1,5 @@[m
+[32m+[m[32mclass Car:[m
+[32m+[m[32m    id = int[m
+[32m+[m[32m    license = str[m
+[32m+[m[32m    driver = str[m
+[32m+[m[32m    passegenger = int[m
+\ No newline at end of file[m
+[1mdiff --git a/Python/car.pyc b/Python/car.pyc[m
+[1mnew file mode 100644[m
+[1mindex 0000000..102ea50[m
+Binary files /dev/null and b/Python/car.pyc differ
+[1mdiff --git a/Python/main.py b/Python/main.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..aeba1b3[m
+[1m--- /dev/null[m
+[1m+++ b/Python/main.py[m
+[36m@@ -0,0 +1,13 @@[m
+[32m+[m[32mfrom car import Car[m
+[32m+[m
+[32m+[m[32mif __name__ == "__main__":[m
+[32m+[m[32m    print("Hola Mundo")[m
+[32m+[m[32m    car = Car()[m
+[32m+[m[32m    car.license = "AMS234"[m
+[32m+[m[32m    car.driver = "Andres Herrera"[m
+[32m+[m[32m    print(vars(car))[m
+[32m+[m
+[32m+[m[32m    car2 = Car()[m
+[32m+[m[32m    car2.license = "QWE567"[m
+[32m+[m[32m    car2.driver = "Matha"[m
+[32m+[m[32m    print(vars(car2))[m
+\ No newline at end of file[m
+[1mdiff --git a/Python/payment.py b/Python/payment.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..03c14da[m
+[1m--- /dev/null[m
+[1m+++ b/Python/payment.py[m
+[36m@@ -0,0 +1,2 @@[m
+[32m+[m[32mclass Payment:[m
+[32m+[m[32m    id = int[m
+\ No newline at end of file[m
+[1mdiff --git a/Python/route.py b/Python/route.py[m
+[1mnew file mode 100644[m
+[1mindex 0000000..9203e8f[m
+[1m--- /dev/null[m
+[1m+++ b/Python/route.py[m
+[36m@@ -0,0 +1,4 @@[m
+[32m+[m[32mclass Route:[m
+[32m+[m[32m    id      = int[m
+[32m+[m[32m    start   = [][m
+[32m+[m[32m    end     = [][m
+\ No newline at end of file[m
